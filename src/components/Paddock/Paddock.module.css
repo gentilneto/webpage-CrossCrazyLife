@@ -1,0 +1,604 @@
+/* ESPAÇO PÓS-CORRIDA & PADDOCK CLUB */
+.paddockSection {
+  width: 100%;
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-surface-container-lowest);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--margin-desktop);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+.imageCol {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .imageCol {
+    grid-column: span 6 / span 6;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 28rem; /* h-[450px] approx */
+  border-radius: var(--radius-2xl); /* rounded-2xl */
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.imageBg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface-container-lowest), transparent, transparent);
+}
+
+.badgeTop {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-family: var(--font-headline-sm);
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  font-weight: 900;
+  font-style: italic;
+  border-radius: var(--radius-DEFAULT);
+}
+
+.floatingCard {
+  display: none;
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1rem;
+  background-color: var(--color-surface-container-high);
+  padding: var(--space-md);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 20rem; /* max-w-xs */
+}
+
+@media (min-width: 640px) {
+  .floatingCard {
+    display: block;
+  }
+}
+
+.floatingHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary-container);
+  margin-bottom: 0.25rem;
+}
+
+.floatingIcon {
+  font-size: 18px;
+}
+
+.floatingTitle {
+  font-family: var(--font-label-caps);
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.floatingDesc {
+  font-family: var(--font-body-sm);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.contentCol {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .contentCol {
+    grid-column: span 6 / span 6;
+  }
+}
+
+.subtitleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.subtitleLine {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: var(--color-primary-container);
+}
+
+.subtitleText {
+  font-family: var(--font-label-caps);
+  font-size: 11px;
+  color: var(--color-primary-container);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  font-family: var(--font-headline-lg);
+  font-size: 32px;
+  color: var(--color-secondary);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: var(--space-2xs);
+  line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+.titleHighlight {
+  color: var(--color-secondary-container);
+}
+
+.description {
+  font-family: var(--font-body-lg);
+  font-size: 18px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.625;
+}
+
+.perksGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .perksGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.perkCard {
+  padding: var(--space-sm);
+  background-color: var(--color-surface-container-low);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.perkTitle {
+  font-family: var(--font-headline-sm);
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.perkDesc {
+  font-family: var(--font-body-sm);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.iconPrimaryContainer { color: var(--color-primary-container); font-size: 24px; }
+.iconSecondaryContainer { color: var(--color-secondary-container); font-size: 24px; }
+.iconTertiary { color: var(--color-tertiary); font-size: 24px; }
+.iconPrimary { color: var(--color-primary); font-size: 24px; }
+
+.actionWrapper {
+  padding-top: var(--space-xs);
+}
+
+.btnAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  font-family: var(--font-headline-sm);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 900;
+  border-radius: var(--radius-DEFAULT);
+  transition: all 200ms;
+  text-decoration: none;
+}
+
+.btnAction:hover {
+  background-color: var(--color-secondary-container);
+}
+
+
+/* SEÇÃO LIVE STREAM / CÂMERA DA PISTA AO VIVO */
+.liveCamSection {
+  width: 100%;
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-surface-dim);
+}
+
+.containerCol {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .containerCol {
+    padding: 0 var(--margin-desktop);
+  }
+}
+
+.liveHeaderGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .liveHeaderGroup {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.pulseDotError {
+  width: 0.625rem; /* 2.5 */
+  height: 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--color-error);
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.subtitleError {
+  font-family: var(--font-label-caps);
+  font-size: 11px;
+  color: var(--color-error);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.titleLive {
+  font-family: var(--font-headline-lg);
+  font-size: 32px;
+  color: var(--color-secondary);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: var(--space-2xs);
+}
+
+@media (min-width: 1024px) {
+  .titleLive {
+    font-size: 48px;
+  }
+}
+
+.titleLiveHighlight {
+  color: var(--color-tertiary);
+}
+
+.liveStats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-telemetry-data);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.iconTertiarySmall {
+  color: var(--color-tertiary);
+  font-size: 14px;
+}
+
+.statSeparator {
+  color: var(--color-surface-container-highest);
+  margin: 0 0.25rem;
+}
+
+.spectatorCount {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 16 / 9;
+  max-height: 640px;
+}
+
+.videoStreamBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 700ms;
+}
+
+.gradientOverlayTop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface-container-lowest), transparent, rgba(14, 14, 18, 0.8));
+}
+
+.gradientOverlayRight {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(19, 19, 23, 0.7), transparent, rgba(19, 19, 23, 0.4));
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
+  background-size: 100% 4px;
+}
+
+.videoHudTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.hudTopLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.liveBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem; /* 1.5 */
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-error);
+  color: var(--color-on-error);
+  border-radius: var(--radius-DEFAULT);
+  font-family: var(--font-label-caps);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.pulseDotWhite {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: white;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.camTitle {
+  font-family: var(--font-telemetry-data);
+  font-size: 12px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  background-color: rgba(14, 14, 18, 0.9);
+  border: 1px solid var(--color-surface-container-high);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-DEFAULT);
+  backdrop-filter: blur(12px);
+}
+
+.hudTopRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: rgba(14, 14, 18, 0.9);
+  border: 1px solid var(--color-surface-container-high);
+  backdrop-filter: blur(12px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-DEFAULT);
+  font-family: var(--font-telemetry-data);
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
+.hiddenSm {
+  display: none;
+}
+.statSeparatorHiddenSm {
+  display: none;
+  color: var(--color-surface-container-highest);
+}
+
+@media (min-width: 640px) {
+  .hiddenSm, .statSeparatorHiddenSm {
+    display: inline;
+  }
+}
+
+.textTertiary { color: var(--color-tertiary); }
+.textPrimaryContainer { color: var(--color-primary-container); }
+
+.targetReticle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reticleOuter {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 219, 233, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.reticleInner {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 2px dashed var(--color-primary-container);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reticleIcon {
+  font-size: 30px;
+  color: var(--color-secondary);
+  opacity: 0.8;
+}
+
+.reticleText {
+  margin-top: 0.5rem;
+  font-family: var(--font-telemetry-data);
+  font-size: 11px;
+  color: var(--color-tertiary);
+  background-color: rgba(14, 14, 18, 0.8);
+  padding: 2px 8px;
+  border-radius: var(--radius-DEFAULT);
+  letter-spacing: 0.1em;
+}
+
+.videoHudBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(to top, var(--color-surface-dim), rgba(19, 19, 23, 0.8), transparent);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  pointer-events: auto;
+}
+
+.camControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btnCamActive {
+  padding: 0.25rem var(--space-sm);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-family: var(--font-label-caps);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-DEFAULT);
+  transition: opacity 200ms;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btnCamActive:hover {
+  opacity: 0.9;
+}
+
+.btnCam {
+  padding: 0.25rem var(--space-sm);
+  background-color: rgba(42, 41, 46, 0.9);
+  color: var(--color-secondary);
+  font-family: var(--font-label-caps);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-DEFAULT);
+  transition: background-color 200ms;
+  border: none;
+  cursor: pointer;
+}
+
+.btnCam:hover {
+  background-color: var(--color-surface-bright);
+}
+
+.hudLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.pulseDotTertiary {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-tertiary);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.viewersText {
+  font-family: var(--font-telemetry-data);
+  font-size: 12px;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
